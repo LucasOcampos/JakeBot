@@ -3,6 +3,7 @@ const CLIENT = new Discord.Client();
 
 const TOKEN = 'NzA5NDg4MDc3MzAyNjYxMjMw.XrmoZA.YynpzQnTZutheFsvcSa_N3p_xlg';
 const PREFIX = '!';
+const canalSignUp = '709436605928046642';
 
 CLIENT.on('ready', () => {
     console.log('JakeBot online!')
@@ -13,11 +14,14 @@ CLIENT.on('message', message => {
     let args = message.content.substring(PREFIX.length).split(" ");
     let channelID = message.channel.id;
 
-    if(args[0] === 'signup' && channelID === '709436605928046642'){
+    if(args[0] === 'signup' && channelID === canalSignUp){
         let author = message.client;
         message.author.send('Para ter acesso aos canais de texto e voz de Central ADS, utilize o link:\n' +
             'LINK\n\n' +
             'Isto garantirá acesso completo aos canais, onde poderá receber ajuda de outros alunos, assim como você!');
+    }
+    if(args[0] === 'signup' && channelID !== canalSignUp){
+        message.reply('esse comando só pode ser enviado no canal <#709436605928046642>');
     }
 })
 
