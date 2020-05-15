@@ -22,7 +22,7 @@ CLIENT.on('message', message => {
             'Antes de usufruir dos nossos canais, passar no canal <#' + canalRegras + '> para verificar as regras da comunidade.');
     }
     if(args[0] === 'signup' && channelID !== canalSignUp){
-        message.reply('esse comando só pode ser enviado no canal <#709436605928046642>');
+        message.reply('esse comando só pode ser enviado no canal <#' + canalSignUp + '>');
     }
 })
 
