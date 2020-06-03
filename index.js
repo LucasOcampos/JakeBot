@@ -4,6 +4,7 @@ const CLIENT = new Discord.Client();
 const PREFIX = '!';
 const canalRegras = '709441778805243944';
 const canalSignUp = '709436605928046642';
+const canalPermissoes = '709450439703396403';
 
 CLIENT.on('ready', () => {
     console.log('JakeBot online!')
@@ -19,7 +20,7 @@ CLIENT.on('message', message => {
         message.author.send('Para ter acesso aos canais de texto e voz de Central ADS, utilize o link:\n' +
             'http://centralads.epizy.com\n\n' +
             'Isto garantirá acesso completo aos canais, onde poderá receber ajuda de outros alunos, assim como você!\n' +
-            'Antes de usufruir dos nossos canais, passar no canal <#' + canalRegras + '> para verificar as regras da comunidade.');
+            'Antes de usufruir dos nossos canais, passar no canal <#' + canalRegras + '> para verificar as regras da comunidade e entre no canal <#' + canalPermissoes + '> para informar o seu semestre.');
     }
     if(args[0] === 'signup' && channelID !== canalSignUp){
         message.reply('esse comando só pode ser enviado no canal <#' + canalSignUp + '>');
