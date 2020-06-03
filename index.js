@@ -17,9 +17,8 @@ CLIENT.on('message', message => {
     if(args[0] === 'signup' && channelID === canalSignUp){
         let author = message.client;
         message.author.send('Para ter acesso aos canais de texto e voz de Central ADS, utilize o link:\n' +
-            'LINK\n\n' +
-            'Isto garantirá acesso completo aos canais, onde poderá receber ajuda de outros alunos, assim como você!\n' +
-            'Antes de usufruir dos nossos canais, passar no canal <#' + canalRegras + '> para verificar as regras da comunidade.');
+            'http://dev-centralads.epizy.com\n\n' +
+            'Isto garantirá acesso completo aos canais, onde poderá receber ajuda de outros alunos, assim como você!');
     }
     if(args[0] === 'signup' && channelID !== canalSignUp){
         message.reply('esse comando só pode ser enviado no canal <#' + canalSignUp + '>');
