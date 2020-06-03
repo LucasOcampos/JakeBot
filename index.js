@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const CLIENT = new Discord.Client();
 
-const TOKEN = 'NzA5NDg4MDc3MzAyNjYxMjMw.XrmoZA.YynpzQnTZutheFsvcSa_N3p_xlg';
 const PREFIX = '!';
+const canalRegras = '709441778805243944';
 const canalSignUp = '709436605928046642';
 
 CLIENT.on('ready', () => {
@@ -21,7 +21,7 @@ CLIENT.on('message', message => {
             'Isto garantirá acesso completo aos canais, onde poderá receber ajuda de outros alunos, assim como você!');
     }
     if(args[0] === 'signup' && channelID !== canalSignUp){
-        message.reply('esse comando só pode ser enviado no canal <#709436605928046642>');
+        message.reply('esse comando só pode ser enviado no canal <#' + canalSignUp + '>');
     }
 })
 
@@ -42,4 +42,4 @@ CLIENT.on('message', message => {
 //     }
 // })
 
-CLIENT.login(TOKEN);
+CLIENT.login(process.env.BOT_TOKEN);
