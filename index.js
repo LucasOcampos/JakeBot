@@ -32,6 +32,8 @@ CLIENT.on('message', message => {
         let nickname = args.join(' ');
 
         member.setNickname(nickname);
+        message.reply(roleEstudante);
+        message.reply(roleNaoInscrito);
 
         // member.addRole(role).catch(console.error);
     }
