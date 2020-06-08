@@ -25,7 +25,6 @@ CLIENT.on('message', message => {
 
     if(args[0] === 'signup' && channelID === canalSignUp){
         let roleEstudante = message.guild.roles.cache.find(role => role.name === "Estudantes");
-        let roleNaoInscrito = message.guild.roles.cache.find(role => role.name === "Não Inscrito");
         let member = message.member;
 
         args.shift();
@@ -33,7 +32,7 @@ CLIENT.on('message', message => {
 
         member.setNickname(nickname);
 
-        member.roles.add(roleEstudante).catch(console.error);
+        member.roles.set([roleEstudante]).catch(console.error);
     }
 
     if(args[0] === 'signup' && channelID !== canalSignUp){
