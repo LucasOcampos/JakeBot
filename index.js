@@ -31,6 +31,8 @@ CLIENT.on('message', message => {
         let nickname = args.join(' ');
 
         message.member.setNickname(nickname);
+
+        message.member.roles.add(roleEstudante);
     }
 
     if(args[0] === 'signup' && channelID !== canalSignUp){
