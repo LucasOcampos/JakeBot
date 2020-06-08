@@ -5,8 +5,8 @@ const PREFIX = '!';
 const canalRegras = '709441778805243944';
 const canalSignUp = '709436605928046642';
 const canalPermissoes = '709450439703396403';
-const roleEstudante = message.guild.roles.find(r => r.name === "Estudantes");
-const roleNaoInscrito = message.guild.roles.find(r => r.name === "Não Inscrito");
+const roleEstudante = '689855960771985425';
+const roleNaoInscrito = '709438034747195471';
 
 CLIENT.on('ready', () => {
     console.log('JakeBot online!')
