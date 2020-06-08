@@ -24,15 +24,16 @@ CLIENT.on('message', message => {
     // }
 
     if(args[0] === 'signup' && channelID === canalSignUp){
-        let roleEstudante = member.guild.roles.cache.find(role => role.name === "Estudantes");
+        let roleEstudante = '689855960771985425';
         let roleNaoInscrito = '709438034747195471';
+        let author = message.member;
 
         args.shift();
         let nickname = args.join(' ');
 
         message.member.setNickname(nickname);
 
-        message.member.roles.add(roleEstudante);
+        author.roles.add([]);
     }
 
     if(args[0] === 'signup' && channelID !== canalSignUp){
