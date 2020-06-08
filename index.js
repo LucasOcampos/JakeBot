@@ -30,7 +30,7 @@ CLIENT.on('message', message => {
         args.shift();
         let nickname = args.join(' ');
 
-        member.setNickname(nickname);
+        message.member.setNickname(nickname);
     }
 
     if(args[0] === 'signup' && channelID !== canalSignUp){
