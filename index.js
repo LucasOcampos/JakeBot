@@ -24,10 +24,8 @@ CLIENT.on('message', message => {
     // }
 
     if(args[0] === 'signup' && channelID === canalSignUp){
-        let nickname = '';
-        for(i = 1; i < args.length; i++){
-            nickname.concat(args[i] + ' ');
-        }
+        args.shift();
+        let nickname = args.join(' ');
 
         message.member.setNickname(nickname);
     }
