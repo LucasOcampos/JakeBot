@@ -24,10 +24,9 @@ CLIENT.on('message', message => {
     // }
 
     if(args[0] === 'signup' && channelID === canalSignUp){
-        let author = message.client;
         let nickname = args[1];
 
-        message.author.setNickname(nickname);
+        message.member.setNickname(nickname);
     }
 
     if(args[0] === 'signup' && channelID !== canalSignUp){
