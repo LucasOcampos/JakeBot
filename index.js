@@ -24,8 +24,8 @@ CLIENT.on('message', message => {
     // }
 
     if(args[0] === 'signup' && channelID === canalSignUp){
-        // let roleEstudante = message.guild.roles.get("689855960771985425");
-        // let roleNaoInscrito = message.guild.roles.get("709438034747195471");
+        let roleEstudante = message.guild.roles.get("689855960771985425");
+        let roleNaoInscrito = message.guild.roles.get("709438034747195471");
         let member = message.member;
 
         args.shift();
