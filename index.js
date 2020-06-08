@@ -5,8 +5,6 @@ const PREFIX = '!';
 const canalRegras = '709441778805243944';
 const canalSignUp = '709436605928046642';
 const canalPermissoes = '709450439703396403';
-const roleEstudante = '689855960771985425';
-const roleNaoInscrito = '709438034747195471';
 
 CLIENT.on('ready', () => {
     console.log('JakeBot online!')
@@ -26,12 +24,16 @@ CLIENT.on('message', message => {
     // }
 
     if(args[0] === 'signup' && channelID === canalSignUp){
+        let roleEstudante = message.guild.roles.find(r => r.name === "Estudantes");
+        let roleNaoInscrito = message.guild.roles.find(r => r.name === "Não estudante");
+        let member = message.member;
+
         args.shift();
         let nickname = args.join(' ');
 
-        message.member.setNickname(nickname);
+        member.setNickname(nickname);
 
-        guildMember.roles.set([roleEstudante]);
+        member.addRole(roleEstudante).catch(console.error);
     }
 
     if(args[0] === 'signup' && channelID !== canalSignUp){
