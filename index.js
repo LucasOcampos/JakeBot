@@ -15,13 +15,21 @@ CLIENT.on('message', message => {
     let args = message.content.substring(PREFIX.length).split(" ");
     let channelID = message.channel.id;
 
+    // if(args[0] === 'signup' && channelID === canalSignUp){
+    //     let author = message.client;
+    //     message.author.send('Para ter acesso aos canais de texto e voz de Central ADS, utilize o link:\n' +
+    //         'http://centralads.epizy.com\n\n' +
+    //         'Isto garantirá acesso completo aos canais, onde poderá receber ajuda de outros alunos, assim como você!\n' +
+    //         'Antes de usufruir dos nossos canais, passar no canal <#' + canalRegras + '> para verificar as regras da comunidade e entre no canal <#' + canalPermissoes + '> para informar o seu semestre.');
+    // }
+
     if(args[0] === 'signup' && channelID === canalSignUp){
         let author = message.client;
-        message.author.send('Para ter acesso aos canais de texto e voz de Central ADS, utilize o link:\n' +
-            'http://centralads.epizy.com\n\n' +
-            'Isto garantirá acesso completo aos canais, onde poderá receber ajuda de outros alunos, assim como você!\n' +
-            'Antes de usufruir dos nossos canais, passar no canal <#' + canalRegras + '> para verificar as regras da comunidade e entre no canal <#' + canalPermissoes + '> para informar o seu semestre.');
+        let nickname = args[1];
+
+        message.author.setNickname(nickname);
     }
+
     if(args[0] === 'signup' && channelID !== canalSignUp){
         message.reply('esse comando só pode ser enviado no canal <#' + canalSignUp + '>');
     }
