@@ -24,18 +24,16 @@ CLIENT.on('message', message => {
     // }
 
     if(args[0] === 'signup' && channelID === canalSignUp){
-        let roleEstudante = message.guild.roles.find(role => role.name === "Estudantes");
-        let roleNaoInscrito = message.guild.roles.find(role => role.name === "Não Inscrito");
+        let roleEstudante = message.guild.roles.cache.find(role => role.name === "Estudantes");
+        let roleNaoInscrito = message.guild.roles.cache.find(role => role.name === "Não Inscrito");
         let member = message.member;
 
         args.shift();
         let nickname = args.join(' ');
 
         member.setNickname(nickname);
-        message.reply(roleEstudante);
-        message.reply(roleNaoInscrito);
 
-        // member.addRole(role).catch(console.error);
+        member.roles.add(roleEstudante).catch(console.error);
     }
 
     if(args[0] === 'signup' && channelID !== canalSignUp){
