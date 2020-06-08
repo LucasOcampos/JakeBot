@@ -24,9 +24,8 @@ CLIENT.on('message', message => {
     // }
 
     if(args[0] === 'signup' && channelID === canalSignUp){
-        let roleEstudante = message.guild.roles.find(r => r.name === "Estudantes");
-        let roleNaoInscrito = message.guild.roles.find(r => r.name === "Não estudante");
-        let member = message.member;
+        let roleEstudante = '689855960771985425';
+        let roleNaoInscrito = '709438034747195471';
 
         args.shift();
         let nickname = args.join(' ');
