@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const CLIENT = new Discord.Client();
 
-const BOT_TOKEN = 'NzEwNjc2Mzk4MzA1NTc0OTMz.Xr37LQ.MDxm1an-7bxbBxmLqfbrY4NYy0o';
 const PREFIX = '!';
 const canalRegras = '709441778805243944';
 const canalSignUp = '709436605928046642';
@@ -61,4 +60,3 @@ CLIENT.on('message', message => {
 // })
 
 //CLIENT.login(process.env.BOT_TOKEN);
-CLIENT.login(BOT_TOKEN);
