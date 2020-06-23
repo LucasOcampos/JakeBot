@@ -33,6 +33,8 @@ CLIENT.on('message', message => {
         member.setNickname(nickname);
 
         member.roles.set([roleEstudante]).catch(console.error);
+
+        message.delete();
     }
 
     if(args[0] === 'signup' && channelID !== canalSignUp){
