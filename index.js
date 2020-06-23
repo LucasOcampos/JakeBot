@@ -59,4 +59,4 @@ CLIENT.on('message', message => {
 //     }
 // })
 
-//CLIENT.login(process.env.BOT_TOKEN);
+CLIENT.login(process.env.BOT_TOKEN);
